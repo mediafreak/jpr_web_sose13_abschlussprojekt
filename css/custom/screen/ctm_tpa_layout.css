@@ -1,0 +1,116 @@
+body {
+  background: #eee;
+  font-size:0.875em; /* base: 14px */
+  color: #444;
+  margin: 0;
+  padding:15px;
+}
+
+#doc  {
+  width: 960px;
+  padding:8px 0;
+  margin: 0 auto; /* richtet Webseite mittig aus */
+  background: #fff;
+}
+
+header {
+  background:url(../../../img/tpa_header.png) no-repeat ;  
+  position:relative;
+  margin: 0 auto;
+  width:944px;
+  height:168px;
+  z-index:5;
+}
+
+header img {
+	float:left;
+}
+
+header h1 {
+	margin:0;
+	padding-top: 34px;
+}
+
+header h2 {
+	margin:0;
+	padding: 0 0 24px 5px;
+}
+
+article {
+	margin-top:20px;
+	min-height:490px;
+}
+
+section,
+#plakat aside {
+  width: 663px;
+  padding: 0 10px 0 0;
+  margin-right: 12px;
+  float: right;
+}
+
+#plakat section,
+aside {
+  width: 237px;
+  padding: 11px 10px 0 10px;
+  margin: 0 0 20px 8px;
+  float: left;
+}
+
+#plakat aside {
+	padding-right:7px;
+	padding-bottom:0;
+	height:470px;	
+}
+
+#plakat img {
+    /* abgerundete Ecken */
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+#secCtn section {
+	width: 520px;
+	margin-left:143px;
+	margin-right:0;
+	float:left;
+}
+
+#secCtn aside {
+	float: right;
+	margin-right:11px;
+	width:245px;
+	background-color:#fdf7dc;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+ 
+footer {
+  clear: both;
+  background: #990000;
+  text-align: right;
+  padding: 10px 20px;
+  margin: 0 8px;
+}
+
+#secCtn img {
+	width:255px;
+	height:187px; 
+	margin-bottom: 25px;
+	padding-right:10px;
+	float:left;
+}
+
+img#rechts {
+	padding:0;
+}
+
+p img {
+	float:left;
+	padding-top:5px;
+	padding-right:20px;
+}

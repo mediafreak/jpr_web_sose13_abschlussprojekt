@@ -1,0 +1,96 @@
+/**
+ * Als Basic Uebernahme aus:
+ * "Yet Another Multicolumn Layout" - YAML CSS Framework
+ *
+ * (en) Horizontal list navigation "hlist"
+ * (de) Horizontale Navigationsliste "hlist"
+ *
+ * @copyright       Copyright 2005-2012, Dirk Jesse
+ * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-CDL (http://www.yaml.de/license.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         v4.0.1
+ * @revision        $Revision: 724 $
+ * @lastmodified    $Date: 2012-03-03 11:45:41 +0100 (Sa, 03 Mrz 2012) $
+ * @lastmodified	Jenny, searchform und -button entfernt, wird nicht benoetigt
+ */
+
+@media all {
+
+	.hlist {
+		/* (en) containing floats in IE */
+		/* (de) Einfassen der Floats im IE */
+		width:100%;
+		overflow:hidden;
+		/* (en|de) Bugfix:IE - collapsing horizontal margins */
+		position:relative;
+		line-height:1em;
+		background: #222;
+	}
+
+	.hlist ul {
+		margin:0;
+		padding: 0.5em 1.5em;
+		/* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+		display:inline;
+		float:left; /* LTR */
+	}
+
+	.hlist ul li {
+		/* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+		display:inline;
+		float:left; /* LTR */
+		font-size:1.0em;
+		line-height:1em;
+		list-style-type:none;
+		margin: 0 .25em 0 0;
+		padding:0;
+	}
+
+	.hlist ul li a,
+	.hlist ul li strong {
+		background:transparent;
+		color:#aaa;
+		display:block;
+		font-size:1em;
+		line-height: 2em;
+		padding: 0 0.5em;
+		font-weight:normal;
+		text-decoration:none;
+		text-shadow: 0 1px 1px rgba(0,0,0,.5);
+		width:auto;
+	}
+
+	.hlist ul li a:focus,
+	.hlist ul li a:hover,
+	.hlist ul li a:active  {
+		color: #ccc;
+		background:#666;
+		background: rgba(255,255,255,.25);
+		-webkit-border-radius: 0.2em;
+		-moz-border-radius: 0.2em;
+		border-radius: 0.2em;
+		text-decoration:none;
+		outline: 0 none;
+	}
+
+	.hlist ul li.active {
+		background:#666;
+		background: rgba(255,255,255,.3);
+		-webkit-border-radius: 0.2em;
+		-moz-border-radius: 0.2em;
+		border-radius: 0.2em;
+		color: #fff;
+	}
+
+	.hlist ul li.active strong,
+	.hlist ul li.active a:focus,
+	.hlist ul li.active a:hover,
+	.hlist ul li.active a:active {
+		background:transparent;
+		color:#fff;
+		text-decoration:none;
+	}
+
+}

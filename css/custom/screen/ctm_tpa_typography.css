@@ -1,0 +1,203 @@
+	@font-face { /* muss im Dokument an erster Stelle stehen, definiert/laedt externe Schriften fuer Webseite */
+		font-family: 'deliciousbold';
+		src: url('../../../webfont/delicious-bold-webfont.eot');
+		src: url('../../../webfont/delicious-bold-webfont.eot?#iefix') format('embedded-opentype'),  
+			 url('../../../webfont/delicious-bold-webfont.woff') format('woff'),  
+			 url('../../../webfont/delicious-bold-webfont.ttf') format('truetype'),  
+			 url('../../../webfont/delicious-bold-webfont.svg#deliciousbold') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	@font-face {
+		font-family: 'deliciousitalic';
+		src: url('../../../webfont/delicious-italic-webfont.eot');
+		src: url('../../../webfont/delicious-italic-webfont.eot?#iefix') format('embedded-opentype'),  
+			 url('../../../webfont/delicious-italic-webfont.woff') format('woff'),  
+			 url('../../../webfont/delicious-italic-webfont.ttf') format('truetype'),  
+			 url('../../../webfont/delicious-italic-webfont.svg#deliciousitalic') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'deliciousroman';
+		src: url('../../../webfont/delicious-roman-webfont.eot');
+		src: url('../../../webfont/delicious-roman-webfont.eot?#iefix') format('embedded-opentype'),  
+			 url('../../../webfont/delicious-roman-webfont.woff') format('woff'),  
+			 url('../../../webfont/delicious-roman-webfont.ttf') format('truetype'),  
+			 url('../../../webfont/delicious-roman-webfont.svg#deliciousroman') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'deliciousbold_italic';
+		src: url('../../../webfont/delicious-bolditalic-webfont.eot');
+		src: url('../../../webfont/delicious-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),  
+			 url('../../../webfont/delicious-bolditalic-webfont.woff') format('woff'),  
+			 url('../../../webfont/delicious-bolditalic-webfont.ttf') format('truetype'),  
+			 url('../../../webfont/delicious-bolditalic-webfont.svg#deliciousbold_italic') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'delicious_heavyregular';
+		src: url('../../../webfont/delicious-heavy-webfont.eot');
+		src: url('../../../webfont/delicious-heavy-webfont.eot?#iefix') format('embedded-opentype'),  
+			 url('../../../webfont/delicious-heavy-webfont.woff') format('woff'),  
+			 url('../../../webfont/delicious-heavy-webfont.ttf') format('truetype'),  
+			 url('../../../webfont/delicious-heavy-webfont.svg#delicious_heavyregular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'delicious_smallcapsregular';
+		src: url('../../../webfont/delicious-smallcaps-webfont.eot');
+		src: url('../../../webfont/delicious-smallcaps-webfont.eot?#iefix') format('embedded-opentype'),  
+			 url('../../../webfont/delicious-smallcaps-webfont.woff') format('woff'),  
+			 url('../../../webfont/delicious-smallcaps-webfont.ttf') format('truetype'),  
+			 url('../../../webfont/delicious-smallcaps-webfont.svg#delicious_smallcapsregular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+@media screen {
+	
+	/* Alle Schriftgroessen auf Standardgroesse (16 Pixel) zuruecksetzen */
+	html * { font-size:1em; }
+	
+	/* Basis-Layout erhaelt Standardschriftgröße von 14 Pixeln */
+	body {
+		font-family:'deliciousroman', Arial, Helvetica, sans-serif;
+		font-size:0.875em; /* base: 14px */
+		color:#141414;
+	}
+	
+	/* Ueberschriften */	
+	h1 {
+		font-size:3.5em; /* 58 px */
+		line-height: 0.8571em;
+		text-transform:uppercase;
+	}
+	
+	/* Auszeichnung fuer Steelband im Kopf */
+	h1 strong {
+		color:#ffc700;
+	}
+	
+	h2 {
+		font-size:2.1em; /* 33px */
+		line-height: 1.2em;
+		text-transform:uppercase;
+	}
+	
+	h3 {
+		font-size:1.5em; /* 24px */
+		line-height: 1.2em;
+		margin-top:0.35em;
+		margin-bottom:0.55em;
+		color:#990000;
+	}
+	h4 {
+		font-size:1.2em; /* 19px */
+		line-height: 1.1em;
+		margin-bottom:0.55em;
+		color:#990000;
+	}
+	section h4 {
+	    margin-top:1.3em;
+	}
+	section h4:first-of-type {
+	    margin-top:0;
+	}
+	/* #overline erstellt eine Art over-headline z.B. auf Bandseite*/
+	h5, #overline{
+		font-size:1em;
+		line-height: 1.1em;
+		margin-bottom:0.25em;
+	}
+	h6 {
+		font-size:0.5em;
+		line-height: 1em;
+	}
+	#plakat h4 {
+		margin-top:1.8em;
+		text-transform:uppercase;
+	}
+	#content h4 {
+		padding-top:1.05em;
+	}
+	
+	p,
+	label,
+	button,
+	input {
+		font-family: 'deliciousroman', Arial, Helvetica, sans-serif;
+	}
+		
+	h3, #plakat h4, button, a, p strong {
+		font-family:'deliciousbold', Arial, Helvetica, sans-serif;
+	}
+	
+	/* Links im normalen Text*/
+	a {
+		color: #990000;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	header {
+		color:#FFFFFF;
+	}
+	
+	header a {
+		white-space:nowrap;
+		text-decoration: none;
+		color:#FFFFFF;
+	}
+	
+	header nav#main-nav ul li a {
+		/*text-transform:uppercase;*/
+		font-size:1.250em;
+		letter-spacing:0.05em;
+	}
+	
+	header nav#main-nav li li a { 
+		/*text-transform:uppercase;*/
+		font-size:1.1em;
+		letter-spacing:0.02em;
+		line-height:0.0em;
+		color: #cc8700;
+	}
+	
+	section ol strong,
+	header nav#main-nav li li.active a,
+	header nav#main-nav li li a:hover {
+		color: #990000;
+	}
+	
+	header nav#top-nav {
+		text-align:right;
+		font-size:0.95em;
+		line-height:1.4em;
+	}
+	
+	header nav#top-nav li.active a,
+	header nav#top-nav li a:hover {
+		color: #ffc700;
+	}
+	
+	footer a,
+	footer {
+  		color: #fff;
+	}
+	
+	/* geordnete Liste */
+	section ol {
+        margin-left:2px;
+    }
+	
+	p:last-child {
+		margin-bottom:0.9em;
+	}
+}

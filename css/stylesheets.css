@@ -1,0 +1,34 @@
+/* import norm styles | Norm-Stylesheets einbinden */
+
+@import url(basis/norm/norm.css);
+
+@import url(basis/navigation/hlist.css);
+
+@import url(basis/screen/typography.css);	
+
+
+
+/* import screen layout | Screen-Layout einbinden */
+
+@import url(custom/screen/ctm_tpa_layout.css);
+
+@import url(custom/screen/ctm_tpa_navigation.css);
+
+@import url(custom/screen/ctm_tpa_typography.css);
+
+@import url(custom/screen/ctm_tpa_form.css);
+/*
+@import url(custom/screen/animation.css);*/
+
+
+
+
+/* angedachte Layouts, noch nicht umgesetzt
+
+import mobile layout | Layout fuer mobile Endgeraete
+
+import print layout | Druck-Layout einbinden 
+
+@import url(basic/print/print.css); 
+
+*/

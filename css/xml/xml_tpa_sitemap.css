@@ -1,0 +1,71 @@
+/* Stylesheet fuer Sitemap */
+
+/**** Typografie ****/
+#sitemap section h1, 
+#sitemap section h2, 
+#sitemap section h3, 
+#sitemap section h4 {
+	color:black;
+	text-transform:none;
+	margin-bottom: .15em;
+	line-height: 1.3em;
+}
+
+#sitemap section h4 {
+    margin-top:0;
+}
+#sitemap section h1, 
+#sitemap section h3,
+#sitemap section h3 a, 
+#sitemap section h4 a {
+	font-family:'deliciousroman', Arial, Helvetica, sans-serif;
+}
+#sitemap section h1 {
+	margin-bottom: 0em;
+}
+
+#sitemap section h1:first-child {
+	margin-top:0.15em;
+}
+
+/* Selektor: last-child => letztes Kind eines Elternelementes selektieren */
+#sitemap section h1:last-child,
+#sitemap section h2:last-child,
+#sitemap section h3:last-child,
+#sitemap section h4:last-child,
+#sitemap section p:last-child {
+	margin-bottom:0.9em;
+	/*color:green;*/ /* zum Testen, ob auch wirklich letztes Element */
+}
+
+#sitemap section h2 {
+	padding-left: 19px; 
+	font-size: 1.5em;
+}
+
+#sitemap section h3 {
+	padding-left: 49px;
+	font-size: 1.4em;
+}
+
+#sitemap section h4 {
+	padding-left: 92px;
+	padding-top:0;
+	font-size: 1.3em;
+}
+
+section p {
+	margin-bottom: .3em;
+	padding-left: 19px;
+}
+
+/* Attribut-Selektoren: waehlen Absatz mit class=n, class weil n mehr als einmal vorkommen kann */
+section p[class="2"] {
+	padding-left: 49px;
+}
+section p[class="3"] {
+	padding-left: 92px;
+}
+section p[class="4"] {
+	padding-left: 147px;
+}

@@ -1,0 +1,14 @@
+/* Typografie fuer XML-Dokumente */
+
+section * {
+	letter-spacing:0;
+}
+
+section h1 {
+    font-family:'deliciousbold', Arial, Helvetica, sans-serif;
+    color:#990000;
+	text-transform:none;
+	margin-bottom: 5px;
+	line-height: 1.6em;
+	font-size: 1.7em;
+}

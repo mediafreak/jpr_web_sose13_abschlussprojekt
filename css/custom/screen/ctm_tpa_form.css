@@ -1,0 +1,14 @@
+button{
+    float:left;
+    margin-left:2.8em;
+    padding:2px 4px;
+    color:#990000;
+}
+
+button#abmelden{
+    margin-left:0;
+}
+
+input{
+    margin:0;
+}

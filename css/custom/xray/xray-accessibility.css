@@ -1,0 +1,157 @@
+/* ----------------------------------
+  | |/ // __ \/   \ \/ /
+  |   // /_/ / /| |\  / 
+ /   |/ _, _/ ___ |/ /  
+/_/|_/_/ |_/_/  |_/_/
+
+XRAY accessibility
+updated 12-02-2005
+Heike Edinger
+http://www.vorsprungdurchwebstandards.de
+
+Creative Commons-Lizenz
+http://creativecommons.org/licenses/by-nc-sa/2.0/
+----------------------------------- */
+
+
+/* Fenstertitel anzeigen 
+---------------------------------- */
+head {
+display: block;
+}
+head * { 
+display: none; 
+}
+title { 
+font: bold 22px 'courier new', courier, monospace;
+color: #666;
+background: #fff;
+padding: 5px 3px;
+display: block;
+margin: 3px 5px 5px 5px;
+}
+
+/* Abkürzungen sichtbar machen
+---------------------------------- */
+abbr, acronym	{
+background: #ffc;
+border-bottom: 1px dotted;
+color: #000;
+font-weight: bold;
+}
+abbr:after, acronym:after	{
+content: " - "attr(title)"";
+font-weight: normal;
+}
+
+/* Accesskeys: pastellgelb 
+--------------------------------- */
+*[accesskey]:after { 
+content:	"["attr(accesskey)"]";
+font: bold 11px 'courier new', courier, monospace;
+color: #333;
+background: #ffc;
+border: 1px solid #333;
+padding: 0 2px;
+margin: 2px 2px;
+}
+
+/* Tabindex anzeigen: mint
+---------------------------------- */
+*[tabindex]:after {
+content: "["attr(tabindex)"]";
+font: bold 11px 'courier new', courier, monospace;
+color: #333;
+background: #cff;
+border: 1px solid #333;
+padding: 0 2px;
+margin: 2px 2px;
+}
+
+/* Labels markieren: pastellgelb dotted 
+----------------------------------- */
+label {
+background: #ffc;
+color: #333;
+border: 1px dotted #666;
+}
+
+/* Sprachwechsel markieren: rosa 
+---------------------------------- */
+*[lang]:before {
+content: ""attr(lang)"";
+font: bold 11px 'courier new', courier, monospace;
+color: #333;
+background: #fcc;
+border: 1px solid #333;
+padding: 0 2px;
+margin: 2px 2px;
+}
+/* Hauptsprache anzeigen
+---------------------------------- */
+html[lang]:before {
+content: "Hauptsprache: "attr(lang)"";
+font-weight: normal;
+margin-left: 5px;
+}
+
+/* layoutorientierte Formatierung: <b> und <i> gelb markieren
+---------------------------------- */
+b {
+content: "b";
+font: bold 11px 'courier new', courier, monospace;
+color: #333;
+background: #ff0;
+border: 1px solid #333;
+padding: 0 2px;
+margin: 2px 2px; 
+}
+i {
+content: "i";
+font: bold 11px 'courier new', courier, monospace;
+color: #333;
+background: #ff0;
+border: 1px solid #333;
+padding: 0 2px;
+margin: 2px 2px; 
+}
+
+/* nicht-barrierefreie Javascript-Links gelb markieren 
+---------------------------------- */
+a[href^="javascript:"]:before {
+content: "js!";
+font: bold 11px 'courier new', courier, monospace;
+color: #333;
+background: #ff0;
+border: 1px solid #333;
+padding: 0 2px;
+margin: 2px 2px; 
+} 
+
+/* title-Texte von Links einblenden 
+----------------------------------
+a:after	{
+content: " (title='"attr(title)"') ";
+font: bold 11px 'courier new', courier, monospace;
+color: #333;
+background: #ffc;
+border: 1px solid #333;
+padding: 0 2px;
+margin: 2px 2px;
+}*/
+
+/* Legende 
+---------------------------------- */
+body:after {
+font: 11px 'courier new', courier, monospace;
+color: #333;
+margin: 10px 0;
+padding: 5px;
+width: 100%;
+border-top: 1px dashed; 
+content: "XRAY CSS Legende: Accesskeys: [pastellgelb], Tabindex: [mint], Abkürzungen: pastellgelb, Sprachwechsel: rosa, Labels: pastellgelb dotted, <b> / <i>: gelb, Javascript: js!";
+display: block;
+clear: both;
+background: #fff;
+}
+

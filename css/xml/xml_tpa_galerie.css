@@ -1,0 +1,39 @@
+/* Stylesheet fuer Galerie */
+
+/**** Layout fuer CSS-Lightbox ****/
+/* Bildelemente mit Bildunterschrift */
+#galerie figure {
+    float:left;
+    margin-right:10px;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 30; 
+  visibility: hidden;
+  opacity: 0;
+}
+
+.background-overlay figure {
+    position: absolute;
+    width:500px;
+    top:25%;
+    left:50%;
+    margin-left:-250px;
+    color:#fff;
+}
+
+/* Pseudoklasse :target => ermoeglicht Umsetzung einer Lightbox OHNE Javascript */
+.background-overlay:target {
+  visibility: visible;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.65);  
+  -webkit-transition: opacity .5s, visibility .5s, background .3s;
+  -moz-transition: opacity .5s, visibility .5s, background .3s;
+  -ms-transition: opacity .5s, visibility .5s, background .3s;
+  -o-transition: opacity .5s, visibility .5s, background .3s; 
+}    

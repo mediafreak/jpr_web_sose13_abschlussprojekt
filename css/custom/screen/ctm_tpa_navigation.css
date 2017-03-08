@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* CSS Document */
+
+header #main-nav {
+	position:absolute;
+	padding-top:2px;
+}
+header #top-nav {
+	position:absolute;
+	top:8px;
+	right:10px;
+}
+header ul {
+	list-style-type: none;
+}
+header #main-nav ul li {
+	float:left;
+	margin: 0 5px 0 0;
+}
+header #main-nav ul li:last-child {
+	margin:0;
+}
+header #main-nav ul li a {
+	display: inline-block;
+	padding: 2px 10px;
+	background-color:#900;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	/*** erstellt Verlauf ***/
+	/* fuer WebKit (Safari, Chrome, etc.) */
+	background: -webkit-linear-gradient(top, #ffeb99 1%, #ffcc00 45%, #ffbb00 100%);
+	/* fuer Mozilla/Gecko (Firefox etc) */
+	background: -moz-linear-gradient(top, #ffeb99 1%, #ffcc00 45%, #ffbb00 100%);
+	/* aktueller W3C working draft */
+	background: linear-gradient(180deg, #ffeb99 1%, #ffcc00 45%, #ffbb00 100%);
+	/*background: -o-linear-gradient(top, #ffeb99 1%, #ffcc00 45%, #ffbb00 100%);*/
+	width:110px;
+}
+header #main-nav ul li.active a, 
+header #main-nav ul li a:hover {
+	background: -webkit-linear-gradient(top, #cc3306 3%, #990000 70%);
+	background: -moz-linear-gradient(top, #cc3306 3%, #990000 70%);
+	background: linear-gradient(180deg, #cc3306 3%, #990000 70%);
+	background: -o-linear-gradient(top, #cc3306 3%, #990000 70%);
+}
+header #main-nav ul li ul {
+	display:none;
+	position:absolute;
+	padding:10px 0;
+	background:#fff!important;
+	opacity: 0.94;       /* modern browser */
+	-moz-opacity: 0.94;  /* older Mozilla browser */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=94)"; /* IE8 in Standard Compliant Mode */
+	box-shadow:1px 3px 5px #000000;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+header #main-nav li:hover ul {
+	display:block;
+}
+header #main-nav ul li ul li {
+	float:none;
+}
+header #main-nav ul li ul li a, 
+header #main-nav ul li.active ul li a, 
+header #main-nav ul li ul li a:hover {
+	background:transparent;
+	opacity: 1;       /* modern browser */
+	-moz-opacity: 1;  /* older Mozilla browser */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; /* IE8 in Standard Compliant Mode */
+	/* filter:alpha(opacity=100);  IE5.x -7.0 */ 
+}
+* html ul li ul li {
+	display:inline;
+} /* IE6 Bugfix... */

@@ -1,0 +1,54 @@
+/* ----------------------------------
+  | |/ // __ \/   \ \/ /
+  |   // /_/ / /| |\  / 
+ /   |/ _, _/ ___ |/ /  
+/_/|_/_/ |_/_/  |_/_/
+
+XRAY div structure
+12-02-2005
+Heike Edinger
+http://www.vorsprungdurchwebstandards.de
+
+Creative Commons-Lizenz
+http://creativecommons.org/licenses/by-nc-sa/2.0/
+----------------------------------- */
+
+
+/* <div> mit ID rot markieren & Selektor anzeigen
+---------------------------------- */
+div[id]	{
+border: 1px solid #f00 !important;
+margin: 5px;
+padding: 0;
+}
+div[id]:before	{
+font: 11px 'courier new', courier, monospace;
+content: "div#"attr(id)"";
+-moz-opacity: 0.9;
+color: #000;
+background:	#ffc;
+border-bottom: 1px dotted red;
+border-right: 1px dotted red;
+border-top: 1px dotted red;
+padding: 2px;
+margin: 0 !important;
+}
+
+/* <div> mit CLASS gruen markieren & Selektor anzeigen
+---------------------------------- */
+div[class]	{
+border:	1px solid #0f0 !important;
+margin: 5px;
+padding: 0;
+}
+div[class]:before	{
+font: 11px 'courier new', courier, monospace;
+content: "div."attr(class)"";
+-moz-opacity: 0.9;
+color: #000;
+background:	#ffc;
+border-bottom: 1px dotted lime;
+border-right: 1px dotted lime;
+padding: 2px;
+margin: 0 !important;
+}

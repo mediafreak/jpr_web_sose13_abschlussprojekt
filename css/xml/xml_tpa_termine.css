@@ -1,0 +1,74 @@
+/* Styleseet fuer Termine */
+
+/**** Layout ****/
+#termine table {
+	margin-bottom:20px;
+}
+
+#termine td.datum {
+	/* abgerundete Ecken, fuer Tabellen in Opera nicht unterstuetzt */
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	/*** erstellt Verlauf ***/
+	/* fuer WebKit (Safari, Chrome, etc.) */
+	background: -webkit-linear-gradient(top, #f0dbb2 1%, #f7bd62 55%, #f7bd62 100%);
+	/* fuer Mozilla/Gecko (Firefox etc) */
+	background: -moz-linear-gradient(top, #f0dbb2 1%, #f7bd62 55%, #f7bd62 100%);
+	/* aktueller W3C working draft */
+	background: linear-gradient(180deg, #f0dbb2 1%, #f7bd62 55%, #f7bd62 100%); 
+}
+
+/* Selektor :first-of-type =>  jeweils erstes Kindelement einer bestimmten Art auszuwaehlen
+            :nth-of-type(2) => das n-te gleichartige Kindelement eines Elternelementes selektieren */
+#termine colgroup col:first-of-type,
+#termine colgroup col:nth-of-type(2) {
+	width: 90px;
+}
+
+/* Selektor :last-of-type =>  jeweils letztes Kindelement einer bestimmten Art auszuwaehlen */
+#termine colgroup col:last-of-type {
+    width: 400px;
+}
+ 
+ 
+/**** Typografie ****/
+#termine .datum p,
+#termine thead p,
+#termine tbody th p,
+#termine tfoot p {
+	font-family:'deliciousbold', Arial, Helvetica, sans-serif;
+}
+
+#termine table tbody p,
+#termine table tfoot p {
+	margin-left:15px;
+}
+
+#termine th,
+#termine td {
+	vertical-align:text-top;
+}
+
+#termine thead p{
+	font-size:1.2em;
+}
+
+#termine .datum p{
+	margin: 8px 0;
+	color:#990000;
+	text-align:center;
+}
+
+#termine .datum p strong {
+	color:#FFF;
+	font-size: 3.1em;
+	line-height:0.7em;
+}
+
+#termine tbody p {
+	 margin-bottom:2px;
+}
+
+#termine tfoot p {
+	margin-bottom: 0px;
+}
