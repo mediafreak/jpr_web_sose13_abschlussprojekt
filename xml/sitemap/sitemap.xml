@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE urlset SYSTEM "sitemap.dtd"> <!-- Doctype-Deklaration fuer die dtd -->
+<!-- ruft xslt-Datei auf -->
+<?xml-stylesheet type="text/xsl" href="../sitemap.xsl"?>
+<!-- Sitemap fuer Hauptnavigation, koennte noch auf Top-Nav ausgeweitet werden -->
+<urlset name="Sitemap">
+  <!-- aside-Bereich -->
+  <aside headline="Aufgabe 3">
+    <text>Erstellen Sie eine XML-Datei mit unnummerierten Kapitelüberschriften (auch Unterkapitel) und erstellen 
+          Sie eine XSLT-Datei, so dass als Ergebnis eine HTML-Datei erzeugt wird, die nummerierte Kaptelüberschriften enthält. Für die XML-Datei legen Sie noch ein entsprechendes Vokabular fest, als DTD oder Schema-Datei.
+    </text>
+  </aside>
+  
+  <!-- Url-Eintrag Hauptnavigation, alle vier Kindknoten koennen, muessen derzeit aber nicht angegeben werden -->
+  <url name="Home">
+    <!-- url -->
+    <loc>../../index.html</loc>
+    <!-- letzte Veraenderung, wird aber noch nicht ausgewertet -->
+    <lastmod>2013-05-24T22:48:06+00:00</lastmod>
+    <!-- letzte Veraenderung, wird aber noch nicht ausgewertet -->
+    <priority>1.00</priority>
+    <!-- beschreibener Text -->
+    <text>Das ist die Willkommensseite</text>
+  </url>
+
+  <url name="Die Band">
+    <loc>../../html/band.html</loc>
+    <lastmod>2013-05-24T22:48:06+00:00</lastmod>
+    <priority>0.80</priority>
+    <text>Hier stellt sich unsere Band vor</text>
+  </url>
+
+  <url name="Die Musik">
+    <loc>../../html/musik.html</loc>
+    <lastmod>2013-05-24T22:48:06+00:00</lastmod>
+    <priority>0.80</priority>
+    <text>Alles rund um die Musik</text>
+    <!-- Url fuer Unternavigation -->
+    <url name="Steelpans/-drums">
+      <loc>../../html/musik.html</loc>
+      <lastmod>2013-05-24T22:48:06+00:00</lastmod>
+      <priority>0.80</priority>
+      <text>Steelpans spiele</text>
+      <url name="Tenor">
+        <text>Tenor-Pan</text>
+        <url name="C1"/>
+        <url name="C2">
+          <text>test</text>
+        </url>
+        <url name="C3"/>
+        <url name="C4"/>
+      </url>
+      <url name="Sopran"/>
+    </url>
+    <url name="Repertoire">
+      <loc>../../html/repertoire.html</loc>
+      <lastmod>2013-05-24T22:48:06+00:00</lastmod>
+      <priority>0.80</priority>
+    </url>
+    <url name="CD bestellen"/>
+    <url name="Links"/>
+  </url>
+
+  <url name="Termine">
+    <loc>../termine/termine.xml?0?3?T</loc>
+    <lastmod>2013-06-10T07:10:16+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url name="Buchung"/>
+  <url name="Presse"/>
+  <url name="Galerie">
+    <loc>../galerie/galerie.xml?0?2?G</loc>
+    <lastmod>2013-06-10T07:10:16+00:00</lastmod>
+    <priority>0.80</priority>
+    <url name="Event 1">
+      <loc>../galerie/galerie.xml?0?2?G</loc>
+      <lastmod>2013-05-24T22:48:06+00:00</lastmod>
+      <priority>0.80</priority>
+    </url>
+    <url name="Event 2">
+      <loc>../galerie/galerie.xml?1?2?G</loc>
+      <lastmod>2013-05-24T22:48:06+00:00</lastmod>
+      <priority>0.80</priority>
+      <text>Bilder von unserem Event</text>
+    </url>
+  </url>
+</urlset>

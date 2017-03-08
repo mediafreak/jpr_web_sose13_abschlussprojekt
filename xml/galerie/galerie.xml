@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ruft xslt-Datei auf -->
+<?xml-stylesheet type="text/xsl" href="../galerie.xsl"?>
+<!-- Namespace fuer SchemaLocation -->
+<galerie xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="galerie_vbd.xsd" name="Galerie">
+	<!-- aside-Bereich zur Anmeldung Newsletter -->
+	<aside headline="Tin Pan Alley Timer">
+		<!-- content mit gemixten Inhalt (weitere Kindknoten), ueber mixed lassen sich auch Auszeichnungen im Text realisiern -->
+		<content>Verpassen Sie nicht die nächsten
+			Event-Bilder der Tin Pan Alley Steelband.
+			Gerne senden wir Ihnen eine Nachricht
+			per E-Mail.
+			<form action="#" method="get">
+				<formElem label="E-Mail"  id="emailNews" type="email" name="emailNews" placeholder="ihre_email@example.org" autocomplete="off" required="required" />
+				<button label="Anmelden" />
+				<button label="Abmelden" />
+			</form>
+		</content>
+	</aside>
+	<!-- mehrere Event-Kategorien, enthalten wiederum mehrere Eintraege (items) -->
+	<kategorie name="Event 1">
+		<item name="test">
+			<picture date="Thu, 23 May 2013 10:16:40" copyright="© 2013 Jenny Pilz">bild1.jpg</picture>
+			<titel>Bildtitel</titel>
+			<description>rotes Bild</description>
+		</item>
+
+		<item>
+			<picture date="Thu, 23 May 2013 10:16:40">bild2.jpg</picture>
+			<titel>Bildtitel</titel>
+			<description>grünes Bild</description>
+		</item>
+
+		<item>
+			<picture date="Thu, 23 May 2013 10:16:40">bild3.jpg</picture>
+			<titel>Bildtitel</titel>
+			<description>blaues Bild</description>
+		</item>
+	</kategorie>
+
+	<kategorie name="Event 2">
+		<item>
+			<picture date="Thu, 23 May 2013 10:16:40">bild4.jpg</picture>
+			<titel>Bildtitel</titel>
+			<description>oranges Bild</description>
+		</item>
+
+		<item>
+			<picture date="Thu, 23 May 2013 10:16:40">bild5.jpg</picture>
+			<titel>Bildtitel</titel>
+			<description>pinkes Bild</description>
+		</item>
+
+		<item>
+			<picture date="Thu, 23 May 2013 10:16:40">bild6.jpg</picture>
+			<titel>Bildtitel</titel>
+			<description>gelbes Bild</description>
+		</item>
+	</kategorie>
+</galerie>

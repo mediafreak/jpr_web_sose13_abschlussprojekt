@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- "Venetian Blind Design" (Schema mit global deklarierten benannten Typen, es gibt nur ein Hauptelement) 
+     - (meistens) nur ein einziges global definiertes Element, aber (meistens) viele global definierte benannte Typen 
+     - in den meisten Faellen die sinnvollste Variante:
+       + Die Struktur ist uebersichtlich und leicht zu verstehen.
+       + Da es (meistens) nur ein einziges global definiertes Element gibt, ist sofort klar, welches das Rootelement des XML-Instanzdokuments ist 
+         (anders als beim Salami Slice Design).
+       + Da alle wichtige Typen global deklariert werden koennen, wird Wiederverwendung gefoerdert (anders als beim Russian Doll Design).
+       + Trotz wiederverwendbarer Typen kann deren innerer Aufbau "verborgen" gehalten werden, was spaetere Aenderungen erleichtert.
+       + In dem XML-Instanzdokument koennen nicht nur die Elemente, sondern auch die Attribute ohne Namespace-Spezifizierung verwendet werden, 
+         was die Uebersichtlichkeit sehr erhoeht.
+       + Maximales Potenzial und Entscheidungsfreiheit, ob Namespaces sichtbar oder verborgen sein sollen, 
+         beeinflussbar durch wahlweises Setzen von "elementFormDefault" auf "qualified" oder "unqualified".
+     
+     Quelle: http://www.torsten-horn.de/techdocs/java-xsd.htm#Schema-VenetianBlind  
+
+     Kommentierungen zu den einzelnen Elementen und Attributen einer XSD finden sich u.a. in galerie_ssd.xsd und in termine.xsd. 
+	 Wollte nicht jede Datei mit Kommentaren bestuecken 
+
+	 xmlns:xs:           Namensraum 
+	 xmlns:	   			 Default-Namespace
+     elementFormDefault: Wenn es Kindselemente gibt und diese lokalen Unterelemente ebenfalls den xmlns-Default-Namespace erhalten sollen, 
+                         dann muss elementFormDefault="qualified" gesetzt werden -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="galerie">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="aside" type="asideTyp_E2"/>
+				<xs:element name="kategorie" type="katTyp_E2" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="asideTyp_E2">
+		<xs:sequence>
+			<xs:element name="content" type="cntTyp_E3"/>
+		</xs:sequence>
+		<xs:attribute name="headline" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="cntTyp_E3" mixed="true">
+		<xs:sequence>
+			<xs:element name="form" type="formTyp_E4"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="formTyp_E4">
+		<xs:sequence>
+			<xs:element name="formElem" type="formElemTyp_E5"/>
+			<xs:element name="button" type="btnTyp_E5" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="method" type="xs:string" use="required"/>
+		<xs:attribute name="action" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="formElemTyp_E5">
+		<xs:attribute name="type" type="xs:string" use="required"/>
+		<xs:attribute name="required" type="xs:string" use="required"/>
+		<xs:attribute name="placeholder" type="xs:string" use="required"/>
+		<xs:attribute name="label" type="xs:string" use="required"/>
+		<xs:attribute name="autocomplete" type="xs:string" use="required"/>
+		<xs:attribute name="name" use="required" type="xs:NCName"/>
+		<xs:attribute name="id" use="required" type="xs:NCName"/>
+	</xs:complexType>
+	
+	<xs:complexType name="btnTyp_E5">
+		<xs:attribute name="label" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="katTyp_E2">
+		<xs:sequence>
+			<xs:element name="item" type="itemTyp_E3" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="itemTyp_E3">
+		<xs:sequence>
+			<xs:element name="picture" type="pictTyp_E4"/>
+			<xs:element name="titel" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+	</xs:complexType>
+
+	<xs:complexType name="pictTyp_E4">
+		<!-- Das Element xs:simpleContent wird in xs:complexType-Elementen verwendet, wenn deren Inhalt aus einem einfachen Typ, 
+           	 wie zum Beispiel xs:string oder xs:integer, und nicht aus Kindelementen oder gemischtem Inhalt besteht. 
+             Gewoehnlich geschieht das dann, wenn der einzige Grund dafuer, dass ein Element ein komplexer und kein einfacher Typ ist, 
+             darin besteht, dass er Attribute haben kann. 
+             xs:extension erweitert complexType um die Attribute -->
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="date" type="xs:string" use="required"/>
+				<xs:attribute name="copyright" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+</xs:schema>

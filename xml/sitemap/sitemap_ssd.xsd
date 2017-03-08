@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  
+  <!-- "Salami Slice Design" (Schema mit Referenzen auf global deklarierte Elemente) 
+       - wenig geschachteltes Schema mit Referenzen auf viele global deklarierte Elemente und Attribute 
+         ("global" bedeutet: direkte Kinder des schema-Rootelements)
+       - Die Kindselemente werden nicht lokal definiert, sondern per ref referenziert. 
+       - Das Salami Slice Design aehnelt der Vorgehensweise bei DTDs. Im Vergleich mit sitemap.dtd sehr gut zu erkennen.
+       Quelle: http://www.torsten-horn.de/techdocs/java-xsd.htm#Schema-Salami -->
+
+  <!-- Kommentierungen zu den einzelnen Elementen und Attributen einer XSD finden sich u.a. in galerie_ssd.xsd und in termine.xsd. 
+	     Wollte nicht jede Datei mit Kommentaren bestuecken -->
+
+  <!-- Element 'urlset' von type 'complexType', ruft url-elemente auf -->
+  <xs:element name="urlset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="aside"/>
+        <xs:element maxOccurs="unbounded" ref="url"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="aside">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="text"/>
+      </xs:sequence>
+      <!-- enthaelt Headline-Attribut fuer h4-Element -->
+      <xs:attribute name="headline" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Element 'url' von type 'complexType -->
+  <!-- enthaelt rekursiven Aufruf des Elements 'url' -->
+  <xs:element name="url">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="url"/>
+        <xs:element ref="lastmod"/>
+        <xs:element ref="loc"/>
+        <xs:element ref="priority"/>
+        <xs:element ref="text"/>
+      </xs:choice>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- einfache Datentypen -->
+  <xs:element name="lastmod" type="xs:dateTime"/>
+  <xs:element name="loc" type="xs:string"/>
+  <xs:element name="priority" type="xs:decimal"/>
+  <xs:element name="text" type="xs:string"/>
+
+</xs:schema>

@@ -1,0 +1,48 @@
+<!-- Elementtyp-Deklaration:
+     PCDATA:             Schluesselwort fuer einen Textblock, der auch weitere Anweisungen an den Parser enthalten kann
+     +                   Element ist obligatorisch und wiederholbar, muss also mindestens einmal oder beliebig oft auftreten
+     *                   Element ist optional und wiederholbar, kann also nicht oder beliebig oft auftreten
+     ,                   mit ',' getrennte Elemente muessen genau in der beschriebenen Reihenfolge vorkommen
+     ()                  gruppiert
+     weitere Schluesselwoerter/Zeichen:
+     EMPTY:              keinen Inhalt
+     ANY:                beliebigen Inhalt
+     keine Angabe        Element ist obligatorisch, es muss genau einmal auftreten   
+     ?                   Element ist optional, kann also nicht oder genau einmal auftreten.
+     |                   genau eines der mit '|' getrennte Elemente muss vorkommen -->
+<!ELEMENT urlset (aside,url+)> 
+
+<!-- Attribut-Deklaration:
+     CDATA:              Akronym fuer engl. character data => Zeichendaten, ist ein Datentyp der Attributdeklaration
+     weitere Attribut-Datentypen: 
+     NMTOKEN/NMTOKENS:   eine zusammenhängende Zeichenkette aus Ziffern, Buchstaben 
+                         und ».«, »_« sowie »-« (NMTOKEN) oder mehrere solche Zeichenketten (NMTOKENS)
+     ID:                 eine eindeutige ID 
+     IDREF/IDREFS:       eine Referenz auf eine solche ID (IDREF) oder mehrere davon (IDREFS) 
+     Enumeration:        eine Auflistung konkreter Werte, die im Attribut stehen dürfen, 
+                         auch mit Default-Wert; z.B.: (a|b|c) "a"
+     ENTITY/ENTITIES:    Referenzen auf in der DTD deklarierte Entities
+     NOTATION/NOTATIONS: Notationen, eher selten
+     => diese Attribut-Datentypen lassen kein Festlegen von Attributen zu, 
+        die nur Zahlen oder Buchstaben enthalten duerfen (XSD:Schema ermoeglicht dies)
+     Attribut-Vorgaben:
+     #REQUIRED:          Attribute 'name' muss vorkommen  
+     weitere Moeglichkeiten:
+     #IMPLIED:           Attribute ist optional 
+     #FIXED:             Attribute hat immer einen festen Wert  -->
+<!ATTLIST urlset name CDATA #REQUIRED>  
+
+<!ELEMENT aside (text)>
+<!ATTLIST aside headline CDATA #REQUIRED>
+
+<!ELEMENT url (loc*,lastmod*,priority*,text*,url*)> 
+<!ATTLIST url name CDATA #REQUIRED> 
+
+<!-- PCDATA Akronym fuer engl. parsed character data, ist eine Elementtypdeklaration (Elementinhalt/Content Model)
+     => Textblock wird ebenfalls syntaktisch vom Parser analysiert
+     => wird fuer gemischte Inhalte des Dokuments verwendet 
+        (Inhalte, die auch andere Elemente oder Textbloecke enthalten, dh Element KANN aus Zeichendaten bestehen) -->
+<!ELEMENT loc (#PCDATA)>
+<!ELEMENT lastmod (#PCDATA)>
+<!ELEMENT priority (#PCDATA)>
+<!ELEMENT text (#PCDATA)>

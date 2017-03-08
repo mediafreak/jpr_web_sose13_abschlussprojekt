@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- nur zum Testen und Anschauen 
+	 "Russian Doll Design" ("Matrjoschka", geschachteltes Baumstruktur-Schema, Schachtelung mit lokalen Definitionen) 
+     - Baumstruktur entspricht der des XML-Instanzdokuments
+     - Es gibt nur ein globales Element mit ausschliesslich anonymen Inline-Typdefinitionen für direkt und indirekt untergeordnete Elemente und Attribute. 
+     - Solche Baumstruktur-Schemas sind bei kleinen XML/XSD-Dateien einfacher und schneller zu verstehen, aber für groessere Projekte meistens weniger gut geeignet 
+     - wird schnell unuebersichtlich 
+     
+     Quelle: http://www.torsten-horn.de/techdocs/java-xsd.htm#Schema-Baumstruktur 
+
+     Kommentierungen zu den einzelnen Elementen und Attributen einer XSD finden sich u.a. in galerie_ssd.xsd und in termine.xsd. 
+	 Wollte nicht jede Datei mit Kommentaren bestuecken 
+	 
+	 xmlns:xs:           Namensraum 
+	 xmlns:	   			 Default-Namespace
+     elementFormDefault: Wenn es Kindselemente gibt und diese lokalen Unterelemente ebenfalls den xmlns-Default-Namespace erhalten sollen, 
+                         dann muss elementFormDefault="qualified" gesetzt werden -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="galerie">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="aside">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="content">
+								<xs:complexType mixed="true">
+									<xs:sequence>
+										<xs:element name="form">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="formElem">
+														<xs:complexType>
+															<xs:attribute name="type" type="xs:string" use="required"/>
+															<xs:attribute name="required" type="xs:string" use="required"/>
+															<xs:attribute name="placeholder" type="xs:string" use="required"/>
+															<xs:attribute name="label" type="xs:string" use="required"/>
+															<xs:attribute name="autocomplete" type="xs:string" use="required"/>
+															<xs:attribute name="name" use="required" type="xs:NCName"/>
+															<xs:attribute name="id" use="required" type="xs:NCName"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="button" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="label" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="method" type="xs:string" use="required"/>
+												<xs:attribute name="action" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="headline" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="kategorie" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="item" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="picture">
+											<xs:complexType>
+												<!-- Das Element xs:simpleContent wird in xs:complexType-Elementen verwendet, wenn deren Inhalt aus einem einfachen Typ, 
+								                 	 wie zum Beispiel xs:string oder xs:integer, und nicht aus Kindelementen oder gemischtem Inhalt besteht. 
+								                 	 Gewoehnlich geschieht das dann, wenn der einzige Grund dafuer, dass ein Element ein komplexer und kein einfacher Typ ist, 
+								                 	 darin besteht, dass er Attribute haben kann. 
+								                 	 xs:extension erweitert complexType um die Attribute -->
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="date" type="xs:string" use="required"/>
+														<xs:attribute name="copyright" type="xs:string"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="titel" type="xs:string"/>
+										<xs:element name="description" type="xs:string"/>
+									</xs:sequence>
+									<xs:attribute name="name" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="name" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

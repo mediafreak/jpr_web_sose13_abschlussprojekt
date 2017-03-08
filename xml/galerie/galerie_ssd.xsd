@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- "Salami Slice Design" (Schema mit Referenzen auf global deklarierte Elemente) 
+     - wenig geschachteltes Schema mit Referenzen auf viele global deklarierte Elemente und Attribute 
+       ("global" bedeutet: direkte Kinder des schema-Rootelements)
+     - Die Kindselemente werden nicht lokal definiert, sondern per ref referenziert. 
+     - Das Salami Slice Design ähnelt der Vorgehensweise bei DTDs 
+     
+     Quelle: http://www.torsten-horn.de/techdocs/java-xsd.htm#Schema-Salami 
+     
+     xmlns:xs:           Namensraum 
+	   xmlns:	      			 Default-Namespace
+     elementFormDefault: Wenn es Kindselemente gibt und diese lokalen Unterelemente ebenfalls den xmlns-Default-Namespace erhalten sollen, 
+                         dann muss elementFormDefault="qualified" gesetzt werden -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="galerie">
+    <!-- complexType-Element, um die Definition eines neuen (anonymen) Typs einzuleiten -->
+    <xs:complexType>
+      <!-- Legt fest, dass die Elemente in der Gruppe (sequence) in der angegebenen Reihenfolge 
+           im enthaltenden Element angezeigt werden. -->
+      <xs:sequence>
+        <!-- 'ref' referenziert ein bestehendes Element 'kategorie',
+              welches an anderer Stelle im Schema deklariert wurde,
+             'maxOccurs= unbounded' keine Begrenzung der Anzahl des ref Elements,
+             default fuer max-/minOccures: 1, 0=optional -->
+        <xs:element ref="aside"/>
+        <xs:element maxOccurs="unbounded" ref="kategorie"/>
+      </xs:sequence>
+      <!-- attribute kommen einmal oder keinmal vor; 'use' legt fest, 
+           ob vorgeschrieben (required), optional oder verboten (prohibited);
+           'type' nur wenn Inhalt kein simpleType-Element -->
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="aside">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="content"/>
+      </xs:sequence>
+      <xs:attribute name="headline" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="content">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="form"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="form">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="formElem"/>
+        <xs:element maxOccurs="unbounded" ref="button"/>
+      </xs:sequence>
+      <xs:attribute name="action" use="required"/>
+      <xs:attribute name="method" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="formElem">
+    <xs:complexType>
+      <xs:attribute name="autocomplete" use="required" type="xs:NCName"/>
+      <xs:attribute name="label" use="required" type="xs:NCName"/>
+      <xs:attribute name="placeholder" use="required"/>
+      <xs:attribute name="required" use="required" type="xs:integer"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="button">
+    <xs:complexType>
+      <xs:attribute name="label" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="kategorie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="item"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="item">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="picture"/>
+        <xs:element ref="titel"/>
+        <xs:element ref="description"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="picture">
+    <xs:complexType>
+      <!-- Das Element xs:simpleContent wird in xs:complexType-Elementen verwendet, wenn deren Inhalt aus einem einfachen Typ, 
+           wie zum Beispiel xs:string oder xs:integer, und nicht aus Kindelementen oder gemischtem Inhalt besteht. 
+           Gewoehnlich geschieht das dann, wenn der einzige Grund dafuer, dass ein Element ein komplexer und kein einfacher Typ ist, 
+           darin besteht, dass er Attribute haben kann. 
+           xs:extension erweitert complexType um die Attribute -->
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="copyright"/>
+          <xs:attribute name="date" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="titel" type="xs:NCName"/>
+  <xs:element name="description" type="xs:string"/>
+</xs:schema>

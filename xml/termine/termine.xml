@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ruft xslt-Datei auf -->
+<?xml-stylesheet type="text/xsl" href="../termine.xsl"?>
+<!-- Namespace fuer SchemaLocation -->
+<termine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="termine_vbd.xsd" name="Termine">
+	<!-- aside-Bereich, Anmeldung Newsletter -->
+	<aside headline="Tin Pan Alley Timer">
+		<content>Verpassen Sie nicht den nächsten
+			Event der Tin Pan Alley Steelband.
+			Gerne senden wir Ihnen
+			eine Nachricht per E-Mail.
+			<form action="#" method="get">
+				<formElem label="E-Mail" id="emailNews" type="email" name="emailNews" placeholder="ihre_email@example.org" autocomplete="off" required="required" />
+				<button label="Anmelden" />
+				<button label="Abmelden" />
+			</form>
+		</content>	
+	</aside>
+	<!-- mehrere Monatskategorien, enthalten wiederum mehrere Events -->
+	<kategorie name="Mai">
+		<event>
+			<datum>
+				<wochentag>Samstag</wochentag>
+				<tag>26.</tag>
+			</datum>
+			<veranstaltung>Karneval der Kulturen in Berlin</veranstaltung>
+			<!-- name-Attribute wird fuer th verwendet -->
+			<veranstalter name="Veranstalter">Max Muster</veranstalter>
+			<uhrzeit name="Zeit">ca. 18.00 – 19.00 Uhr</uhrzeit>
+			<adresse name="Ort">
+				<strasse>Blücherplatz 00</strasse>
+				<plz>00000</plz>
+				<ort>Berlin</ort>
+			</adresse>
+			<eintritt name="Eintritt">frei</eintritt>
+			<url>www.karneval-berlin.de</url>
+		</event>
+		
+		<event>
+			<datum>
+				<wochentag>Samstag</wochentag>
+				<tag>26.</tag>
+			</datum>
+			<veranstaltung>Karneval der Kulturen in Berlin</veranstaltung>
+			<veranstalter name="Veranstalter">Max Muster</veranstalter>
+			<uhrzeit name="Zeit">ca. 18.00 – 19.00 Uhr</uhrzeit>
+			<adresse name="Ort">
+				<strasse>Blücherplatz 00</strasse>
+				<plz>00000</plz>
+				<ort>Berlin</ort>
+			</adresse>
+			<eintritt name="Eintritt">frei</eintritt>
+			<url>www.karneval-berlin.de</url>
+		</event>
+		
+		<event>
+			<datum>
+				<wochentag>Samstag</wochentag>
+				<tag>26.</tag>
+			</datum>
+			<veranstaltung>Karneval der Kulturen in Berlin</veranstaltung>
+			<veranstalter name="Veranstalter">Max Muster</veranstalter>
+			<uhrzeit name="Zeit">ca. 18.00 – 19.00 Uhr</uhrzeit>
+			<adresse name="Ort">
+				<strasse>Blücherplatz 00</strasse>
+				<plz>00000</plz>
+				<ort>Berlin</ort>
+			</adresse>
+			<eintritt name="Eintritt">frei</eintritt>
+			<url>www.karneval-berlin.de</url>
+		</event>
+	</kategorie>
+	
+	<kategorie name="Juni">
+		<event>
+			<datum>
+				<wochentag>Sonntag</wochentag>
+				<tag>16.</tag>
+			</datum>
+			<veranstaltung>Sommerfest der Musikschule Paul Hindemith Neukölln</veranstaltung>
+			<veranstalter name="Veranstalter">Musikschule Paul Hindemith Neukölln</veranstalter>
+			<uhrzeit name="Zeit">ca. 18.00 – 19.00 Uhr</uhrzeit>
+			<adresse name="Ort">
+				<strasse>Gutshof Schloss Britz, Alt-Britz 81</strasse>
+				<zusatz>Hof - Gutshaus - Kulturstall</zusatz>
+				<plz>00000</plz>
+				<ort>Berlin</ort>
+			</adresse>
+			<eintritt name="Eintritt">frei</eintritt>
+			<url>www.musikschuleneukoelln.de</url>
+		</event>
+		<event>
+			<datum>
+				<wochentag>Sonntag</wochentag>
+				<tag>16.</tag>
+			</datum>
+			<veranstaltung>Sommerfest der Musikschule Paul Hindemith Neukölln</veranstaltung>
+			<veranstalter name="Veranstalter">Musikschule Paul Hindemith Neukölln</veranstalter>
+			<uhrzeit name="Zeit">ca. 18.00 – 19.00 Uhr</uhrzeit>
+			<adresse name="Ort">
+				<strasse>Gutshof Schloss Britz, Alt-Britz 81</strasse>
+				<zusatz>Hof - Gutshaus - Kulturstall</zusatz>
+				<plz>00000</plz>
+				<ort>Berlin</ort>
+			</adresse>
+			<eintritt name="Eintritt">frei</eintritt>
+			<url>www.musikschuleneukoelln.de</url>
+		</event>
+	</kategorie>
+	
+	<kategorie name="August">
+		<event>
+			<datum>
+				<wochentag>Sonntag</wochentag>
+				<tag>11.</tag>
+			</datum>
+			<veranstaltung>Freilichtbühne an der Spandauer Zitadelle</veranstaltung>
+			<veranstalter name="Veranstalter">Kulturhaus Spandau</veranstalter>
+			<uhrzeit name="Zeit">11.00 Uhr</uhrzeit>
+			<adresse name="Ort">
+				<strasse>Am Juliusturm 62</strasse>
+				<plz>13599</plz>
+				<ort>Berlin</ort>
+			</adresse>
+			<eintritt name="Eintritt">umsonst &amp; draußen</eintritt>
+			<url>www.freilichtbuehne-spandau2.de/index.php/programm/82-konzert/122-tin-pan-steel-band</url>
+		</event>
+		
+		<event>
+			<datum>
+				<wochentag>Sonntag</wochentag>
+				<tag>11.</tag>
+			</datum>
+			<veranstaltung>Freilichtbühne an der Spandauer Zitadelle</veranstaltung>
+			<veranstalter name="Veranstalter">Kulturhaus Spandau</veranstalter>
+			<uhrzeit name="Zeit">11.00 Uhr</uhrzeit>
+			<adresse name="Ort">
+				<strasse>Am Juliusturm 62</strasse>
+				<plz>13599</plz>
+				<ort>Berlin</ort>
+			</adresse>
+			<eintritt name="Eintritt">umsonst &amp; draußen</eintritt>
+		</event>
+		
+		<event>
+			<datum>
+				<wochentag>Sonntag</wochentag>
+				<tag>11.</tag>
+			</datum>
+			<veranstaltung>Freilichtbühne an der Spandauer Zitadelle</veranstaltung>
+			<veranstalter name="Veranstalter">Kulturhaus Spandau</veranstalter>
+			<adresse name="Ort">
+				<strasse>Am Juliusturm 62</strasse>
+				<plz>13599</plz>
+				<ort>Berlin</ort>
+			</adresse>
+			<eintritt name="Eintritt">umsonst &amp; draußen</eintritt>
+		</event>
+	</kategorie>
+</termine>

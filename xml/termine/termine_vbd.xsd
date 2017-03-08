@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--W3C Schema erstellt mit XMLSpy v2013 rel. 2 sp2 (http://www.altova.com)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:element name="termine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="aside" type="asideTyp_E2"/>
+				<xs:element name="kategorie" type="katTyp_E2" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="asideTyp_E2">
+		<xs:sequence>
+			<xs:element name="content" type="cntTyp_E3"/>
+		</xs:sequence>
+		<xs:attribute name="headline" use="required" type="xs:string"/>
+	</xs:complexType>
+	
+	<xs:complexType name="cntTyp_E3" mixed="true">
+		<xs:sequence>
+			<xs:element name="form" type="formTyp_E4"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="formTyp_E4">
+		<xs:sequence>
+			<xs:element name="formElem" type="formElemTyp_E5"/>
+			<xs:element name="button" type="btnTyp_E5" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="method" type="xs:string" use="required"/>
+		<xs:attribute name="action" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="formElemTyp_E5">
+		<xs:attribute name="type" type="xs:string" use="required"/>
+		<xs:attribute name="required" type="xs:string" use="required"/>
+		<xs:attribute name="placeholder" type="xs:string" use="required"/>
+		<xs:attribute name="label" type="xs:string" use="required"/>
+		<xs:attribute name="autocomplete" type="xs:string" use="required"/>
+		<xs:attribute name="name" use="required" type="xs:NCName"/>
+		<xs:attribute name="id" use="required" type="xs:NCName"/>
+	</xs:complexType>
+	
+	<xs:complexType name="btnTyp_E5">
+		<xs:attribute name="label" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="katTyp_E2">
+		<xs:sequence>
+			<xs:element name="event" maxOccurs="unbounded" type="eventTyp_E3"/>
+		</xs:sequence>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+	</xs:complexType>
+	
+	<xs:complexType name="eventTyp_E3">
+		<xs:sequence>
+			<xs:element name="datum" type="datumTyp_E4"/>
+			<xs:element name="veranstaltung" type="xs:string"/>
+			<xs:element name="veranstalter" type="veranstrTyp_E4"/>
+			<xs:sequence>
+				<xs:element name="uhrzeit" minOccurs="0" type="zeitTyp_E4"/>
+				<xs:element name="adresse" type="adrTyp_E4"/>
+				<xs:element name="eintritt" type="eintrTyp_E4"/>
+				<xs:element name="url" minOccurs="0" type="xs:string"/>
+			</xs:sequence>
+			<!-- xs:choice laesst zu, dass nur genau eines der in der ausgewaehlten Gruppe 
+				 enthaltenen Elemente im enthaltenden Element vorhanden ist. -->
+			<!--<xs:choice>
+				<xs:sequence>
+					<xs:element name="uhrzeit" minOccurs="0" type="zeitTyp_E4"/>
+					<xs:element name="adresse" type="adrTyp_E4"/>
+					<xs:element name="eintritt" type="eintrTyp_E4"/>
+					<xs:element name="url" minOccurs="0" type="xs:string"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="adresse" type="adrTyp_E4"/>
+					<xs:element name="eintritt" type="eintrTyp_E4"/>
+				</xs:sequence>
+			</xs:choice>-->
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="datumTyp_E4">
+		<xs:sequence>
+			<xs:element name="wochentag" type="xs:string"/>
+			<xs:element name="tag" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="veranstrTyp_E4">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" use="required" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="zeitTyp_E4">
+		<!-- Das Element xs:simpleContent wird in xs:complexType-Elementen verwendet, wenn deren Inhalt aus einem einfachen Typ, 
+           wie zum Beispiel xs:string oder xs:integer, und nicht aus Kindelementen oder gemischtem Inhalt besteht. 
+           Gewoehnlich geschieht das dann, wenn der einzige Grund dafuer, dass ein Element ein komplexer und kein einfacher Typ ist, 
+           darin besteht, dass er Attribute haben kann. 
+           xs:extension erweitert complexType um die Attribute -->
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" use="required" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="adrTyp_E4">
+		<xs:sequence>
+			<xs:element name="strasse" type="xs:string"/>
+			<xs:element name="zusatz" minOccurs="0" type="xs:string"/>
+			<xs:element name="plz" type="xs:string"/>
+			<xs:element name="ort" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+	</xs:complexType>
+	
+	<xs:complexType name="eintrTyp_E4">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" use="required" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+</xs:schema>
