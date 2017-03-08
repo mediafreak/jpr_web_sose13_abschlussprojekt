@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Tin Pan Alley Steelband - Die Steelpans/-drums</title>
+
+    <meta name="author" content="Jenny Pilz">
+    <meta name="description" content="Einsendeaufgabe 01 Webprogrammierung SS 2013">
+    <meta name="keywords" content="Medieninformatik,Berlin,Beuth-Hochschule,Webprogrammierung">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index,follow">
+    
+    <link rel="stylesheet" href="../css/stylesheets.css" type="text/css" media="screen" title="stylesheets" />
+    
+	<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>  
+  </head>
+  
+  <body>
+    <!-- um webseite im browser zu zentrieren -->
+    <div id="doc"> 
+      <!-- im Header befindet sich 'Logo', 'Websiteueberschrift' und Naviagtion -->
+      <header id="header"> 
+        <a href="../index.html" accesskey="0" title="[Alt+0] Home">
+          <img src="../img/tpa_logo.png" title="Tin Pan Alley Logo" alt="zwei rote faesser mit Logo der Tin Pan Alley Steelband" />
+        </a>
+        <h1>Tin Pan Alley <strong>Steelband</strong></h1>
+        <h2>Karibisch, exotisch, aussergew&ouml;hnlich</h2>
+        <!-- Aufbau der Navigation ueber ungeordnete Liste, Unterteilung in top-nav und main-nav -->
+        <nav id="top-nav">
+          <ul>
+            <li><a href="#" title="Mitgliederbereich">Mitgliederbereich</a></li>
+            <li><a href="#" title="Kontakt">Kontakt</a></li>
+            <li><a href="../xml/sitemap/sitemap.xml" title="Sitemap DTD &lt;xsl:import&gt;">Sitemap DTD &lt;xsl:import&gt;</a>
+              <li><a href="accesskeySprung.html"  title="Accesskey oder Sprungmarken">Accesskey/Sprungmarken</a></li>
+          </ul>
+        </nav>
+        
+        <nav id="main-nav">
+          <ul>
+            <li><a href="../index.html"  accesskey="0" title="[Alt+0] Home">Home</a></li>
+            <li><a href="band.html" title="Die Band">Die Band</a></li>
+            <li class="active"><a href="musik.html" title="Die Musik">Die Musik</a>
+              <!-- untergeordnete Navigation fuer Untermenuepunkte -->
+              <ul>
+                <li class="active"><a href="musik.html" title="Steelpans/-drums">Steelpans/-drums</a></li>
+                <li><a href="repertoire.html" title="Repertoire">Repertoire</a></li>
+                <li><a href="#" title="CD bestelen">CD bestellen</a></li>
+                <li><a href="#" title="Links">Links</a></li>
+              </ul>
+            </li>
+            <li><a href="../xml/termine/termine.xml" id="T" title="Termine XSD">Termine XSD</a><ul id="xmlNavT"></ul>
+            </li>
+            <li><a href="#" title="Buchung">Buchung</a></li>
+            <li><a href="#" title="Presse">Presse</a></li>
+            <li><a href="../xml/galerie/galerie.xml" id="G" title="Galerie">Galerie</a><ul id="xmlNavG"></ul></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <article id="plakat">
+        <!-- Inhaltsbereich, davon kann es mehrere geben -->
+        <section>
+          <p id="overline">Die Musik &gt; Steelpans-/drums</p>
+          <h3>
+            Der typische Sound <br />
+            der Steelpan
+          </h3>
+          <p>
+            Der Klang der Band nach Sommer, <br />
+            Sonne und Urlaub wird bestimmt durch die Steelpans (Steeldrums). 
+          </p>
+          <p>
+            Diese wurden in den zwanziger Jahren <br />
+            in Trinidad erfunden und im Laufe <br />
+            der Zeit zu hochwertigen Instrumenten weiterentwickelt. 
+          </p>
+          <p>
+            Erg&auml;nzt wird die Besetzung durch Schlagzeug und Percussion.
+          </p>
+        </section>
+        
+        <!-- zweite Spalte, kann im Kontext zur section stehen, muss aber nicht -->
+        <aside style="position:relative;"> 
+          <!-- Aussicht: an dieser Stelle ist eine Audio-Einbindung geplant <audio>. 
+                         Der User kann auf die Felder klicken (hier stehen spaeter Noten) und es erscheint der jeweilige Ton -->
+          <img src="../img/tpa_steeldrums.jpg" title="Steeldrum, Tenor" 
+                alt="Links sind die Schlagh&ouml;lzer f&uuml;r die Steeldrum. Rechts die Steeldrum von oben." />
+          <h3 style="position:absolute;top:59px;left:48px">
+            Steelpan spielen?<br />
+            <strong>Ganz einfach!</strong>
+          </h3>
+          <p style="position:absolute;top:115px;left:48px"> 
+            Klicken Sie mit der Maus in ein <br />
+            Tonfeld und h&ouml;ren Sie, wie eine <br />
+            Tenor-Pan klingt. 
+          </p>
+        </aside>
+      </article>
+      
+      <footer id="footer"> 
+        <a href="impressum.html" title="Impressum">Impressum</a> | 
+        <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fmediafreak.info%2Fstudium%2Fhtml%2Fmusik.html">W3C Validate</a> 
+      </footer>
+      
+    </div>
+  </body>
+</html>

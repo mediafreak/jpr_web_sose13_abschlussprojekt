@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Tin Pan Alley Steelband - Unser Repertoire</title>
+
+    <meta name="author" content="Jenny Pilz" />
+    <meta name="description" content="Einsendeaufgabe 01 Webprogrammierung SS 2013">
+    <meta name="keywords" content="Medieninformatik,Berlin,Beuth-Hochschule,Webprogrammierung">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index,follow">
+    
+    <link rel="stylesheet" href="../css/stylesheets.css" type="text/css" media="screen" title="stylesheets" />
+    
+	<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script> 
+  </head>
+
+  <body>
+    <!-- um webseite im browser zu zentrieren -->
+    <div id="doc"> 
+      <!-- im Header befindet sich 'Logo', 'Websiteueberschrift' und Naviagtion -->
+      <header id="header"> 
+        <a href="../index.html" accesskey="0" title="[Alt+0] Home">
+          <img src="../img/tpa_logo.png" title="Tin Pan Alley Logo" alt="zwei rote faesser mit Logo der Tin Pan Alley Steelband" />
+        </a>
+        <h1>Tin Pan Alley <strong>Steelband</strong></h1>
+        <h2>Karibisch, exotisch, aussergew&ouml;hnlich</h2>
+        <!-- Aufbau der Navigation ueber ungeordnete Liste, Unterteilung in top-nav und main-nav -->
+        <nav id="top-nav">
+          <ul>
+            <li><a href="#" title="Mitgliederbereich">Mitgliederbereich</a></li>
+            <li><a href="#" title="Kontakt">Kontakt</a></li>
+            <li><a href="../xml/sitemap/sitemap.xml" title="Sitemap DTD &lt;xsl:import&gt;">Sitemap DTD &lt;xsl:import&gt;</a>
+              <li><a href="accesskeySprung.html"  title="Accesskey oder Sprungmarken">Accesskey/Sprungmarken</a></li>
+          </ul>
+        </nav>
+        
+        <nav id="main-nav">
+          <ul>
+            <li><a href="../index.html"  accesskey="0" title="[Alt+0] Home">Home</a></li>
+            <li><a href="band.html" title="Die Band">Die Band</a></li>
+            <li class="active"><a href="musik.html" title="Die Musik">Die Musik</a>
+              <!-- untergeordnete Navigation fuer Untermenuepunkte -->
+              <ul>
+                <li><a href="musik.html" title="Steelpans/-drums">Steelpans/-drums</a></li>
+                <li class="active"><a href="repertoire.html" title="Repertoire">Repertoire</a></li>
+                <li><a href="#" title="CD bestelen">CD bestellen</a></li>
+                <li><a href="#" title="Links">Links</a></li>
+              </ul>
+            </li>
+            <li><a href="../xml/termine/termine.xml" id="T" title="Termine XSD">Termine XSD</a><ul id="xmlNavT"></ul></li>
+            <li><a href="#" title="Buchung">Buchung</a></li>
+            <li><a href="#" title="Presse">Presse</a></li>
+            <li><a href="../xml/galerie/galerie.xml" id="G" title="Galerie">Galerie</a><ul id="xmlNavG"></ul></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <article id="plakat">
+        <!-- Inhaltsbereich, davon kann es mehrere geben -->
+        <section>
+          <p id="overline">Die Musik &gt; Repertoire</p>
+          <h3>
+            Calypso, Pop oder Jazz &ndash; 
+            die Mischung machts!
+          </h3>
+          <p>
+            Die Band spielt zum gro&szlig;en Teil Calypso und Soca, die Musik des trinidadischen Karnevals aber auch Latin, 
+            Pop und Jazztitel &hellip;
+          </p>
+          <p><strong>Beispiele aus dem Repertoire:</strong></p>
+          <ul>
+            <li> The Hammer</li>
+            <li> Miss Mary</li>
+            <li> Guadeloupe Chick</li>
+            <li> Carnival Baby</li>
+            <li> Soca Tatti</li>
+            <li> Corazon Espinado</li>
+            <li> Oye Como Va</li>
+            <li> Don’t you worry about a thing</li>
+            <li> I shot the sheriff</li>
+            <li> Mambo No.5</li>
+            <li> Under the sea</li>
+          </ul>
+        </section>
+        
+        <!-- zweite Spalte, kann im Kontext zur section stehen, muss aber nicht -->
+        <aside> 
+          <img src="../img/tpa_repertoire.jpg" title="Steeldrum, Tenor" 
+                alt="Links sind die Schlagh&ouml;lzer f&uuml;r die Steeldrum. Rechts die Steeldrum von oben." /> 
+        </aside>
+      </article>
+      
+      <footer id="footer"> 
+        <a href="impressum.html" title="Impressum">Impressum</a> | 
+        <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fmediafreak.info%2Fstudium%2Fhtml%2Frepertoire.html">W3C Validate</a> 
+      </footer>
+
+    </div>
+  </body>
+</html>

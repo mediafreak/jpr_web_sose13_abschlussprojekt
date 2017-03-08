@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<!-- mit dieser Seite habe ich die optionalen Tags ab HTML5 getestet 
+     <html> <head> <body> </li> </p> werden nicht mehr unbedingt benoetigt
+     Vorteil: Kann QC sparen (Performance) 
+     Nachteil: die meisten Editoren unterstuetzen dies noch nicht
+               kann zu einer Unuebersichtlichkeit beim Arbeiten fuehren, die End-Tags sind dabei auch haeufig Orientierungspunkte--> 
+
+    <title>Tin Pan Alley Steelband - Impressum</title>
+    
+    <meta name="author" content="Jenny Pilz">
+    <meta name="description" content="Einsendeaufgabe 01 Webprogrammierung SS 2013">
+    <meta name="keywords" content="Medieninformatik,Berlin,Beuth-Hochschule,Webprogrammierung">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index,follow">
+    
+    <link rel="stylesheet" href="../css/stylesheets.css" type="text/css" media="screen" title="stylesheets" />
+    
+	<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+ 
+    <!-- um webseite im browser zu zentrieren -->
+    <div id="doc"> 
+      <!-- im Header befindet sich 'Logo', 'Websiteueberschrift' und Naviagtion -->
+      <header id="header"> 
+        <a href="../index.html" accesskey="0" title="[Ctrl+Alt+0] Home">
+          <img src="../img/tpa_logo.png" title="Tin Pan Alley Logo" alt="zwei rote faesser mit Logo der Tin Pan Alley Steelband" />
+        </a>
+        <h1>Tin Pan Alley <strong>Steelband</strong></h1>
+        <h2>Karibisch, exotisch, aussergew&ouml;hnlich</h2>
+        <!-- Aufbau der Navigation ueber ungeordnete Liste, Unterteilung in top-nav und main-nav -->
+        <nav id="top-nav">
+          <ul>
+            <li><a href="#" title="Mitgliederbereich">Mitgliederbereich</a>
+            <li><a href="#" title="Kontakt">Kontakt</a>
+            <li><a href="../xml/sitemap/sitemap.xml" title="Sitemap DTD &lt;xsl:import&gt;">Sitemap DTD &lt;xsl:import&gt;</a>
+            <li><a href="accesskeySprung.html" title="Accesskey oder Sprungmarken">Accesskey/Sprungmarken</a>
+          </ul>
+        </nav>
+        
+        <nav id="main-nav">
+          <ul>
+            <li><a href="../index.html" accesskey="0" title="[Alt+0] Home">Home</a>
+            <li><a href="band.html" title="Die Band">Die Band</a>
+            <li><a href="musik.html" title="Die Musik">Die Musik</a>
+              <!-- untergeordnete Navigation fuer Untermenuepunkte -->
+              <ul>
+                <li><a href="musik.html" title="Steelpans/-drums">Steelpans/-drums</a>
+                <li><a href="repertoire.html" title="Repertoire">Repertoire</a>
+                <li><a href="#" title="CD bestelen">CD bestellen</a>
+                <li><a href="#" title="Links">Links</a>
+              </ul>
+            
+            <li><a href="../xml/termine/termine.xml" id="T" title="Termine XSD">Termine XSD</a>
+              <ul id="xmlNavT"></ul>
+                <li><a href="#" title="Buchung">Buchung</a>
+                <li><a href="#" title="Presse">Presse</a>
+                <li><a href="../xml/galerie/galerie.xml" id="G" title="Galerie">Galerie</a><ul id="xmlNavG"></ul>
+            </ul>
+        </nav>
+      </header>
+      
+      <article  id="secCtn">
+        <!-- Inhaltsbereich, davon kann es mehrere geben -->
+        <section> 
+          <h3>Impressum</h3>
+          <h4>Zwischen&uuml;berschriften sind wichtig (Barrierefreiheit)</h4>
+          <p>&Uuml;berall dieselbe alte Leier. Das Layout ist fertig, der Text l&auml;sst auf sich warten. 
+             Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. 
+          <p>Genau zu diesem Zwecke erschaffen, immer im Schatten meines gro&szlig;en Bruders &raquo;Lorem Ipsum&laquo;, 
+             freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi &ndash; Sein ist wahrgenommen werden. 
+             Und weil Sie nun schon die G&uuml;te haben, mich ein paar weitere S&auml;tze lang zu begleiten, m&ouml;chte ich diese Gelegenheit nutzen, 
+             Ihnen nicht nur als L&uuml;ckenf&uuml;ller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: 
+             Webstandards n&auml;mlich. 
+          <h4>Zu Zwischen&uuml;berschriften kann gesprungen werden</h4>
+          <p>Sehen Sie, Webstandards sind das Regelwerk, auf dem Webseiten aufbauen. So gibt es Regeln f&uuml;r HTML, CSS, JavaScript oder auch XML; 
+             Worte, die Sie vielleicht schon einmal von Ihrem Entwickler geh&ouml;rt haben. Diese Standards sorgen daf&uuml;r, dass alle Beteiligten 
+             aus einer Webseite den gr&ouml;&szlig;ten Nutzen ziehen. Im Gegensatz zu fr&uuml;heren Webseiten m&uuml;ssen wir zum Beispiel nicht mehr zwei 
+             verschiedene Webseiten f&uuml;r den Internet Explorer und einen anderen Browser programmieren. Es reicht eine Seite, die - richtig angelegt - 
+             sowohl auf verschiedenen Browsern im Netz funktioniert, aber ebenso gut f&uuml;r den Ausdruck oder die Darstellung auf einem Handy geeignet ist. 
+          <p>Wohlgemerkt: Eine Seite f&uuml;r alle Formate. Was f&uuml;r eine Erleichterung. Standards sparen Zeit bei den Entwicklungskosten und sorgen daf&uuml;r, 
+             dass sich Webseiten sp&auml;ter leichter pflegen lassen. Nat&uuml;rlich nur dann, wenn sich alle an diese Standards halten. Das gilt f&uuml;r Browser wie Firefox, 
+             Opera, Safari und den Internet Explorer ebenso wie f&uuml;r die Darstellung in Handys. 
+          <h4>HeadingMap ist eine Erweiterung f&uuml;r den Firefox</h4>
+          <p><strong>Und was k&ouml;nnen Sie f&uuml;r Standards tun?</strong> Fordern Sie von Ihren Designern und Programmieren einfach standardkonforme Webseiten. Ihr Budget wird es Ihnen 
+             auf Dauer danken. Ebenso m&ouml;chte ich Ihnen daf&uuml;r danken, dass Sie mich bin zum Ende gelesen haben. Meine Mission ist erf&uuml;llt. Ich werde hier noch die 
+             Stellung halten, bis der geplante Text eintrifft. Ich w&uuml;nsche Ihnen noch einen sch&ouml;nen Tag. Und arbeiten Sie nicht zuviel!
+        </section>
+        <aside> 
+          <h4>Website-Projekt: <br />Relaunch der TPA-Webseite </h4>
+          <p><strong>Webprogrammierung:</strong><br/>
+              Abschlussprojekt SS2013<br/>
+              Jenny Pilz<br/>
+              <a href="mailto:studium@mediafreak.info">studium@mediafreak.info</a>
+          <p><strong>Corporate Design:</strong><br/>
+              Regina Bolz
+        </aside>
+      </article>
+      
+      <footer id="footer"> 
+          <a  class="active" href="impressum.html" title="Impressum">Impressum</a> | 
+          <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fmediafreak.info%2Fstudium%2Fhtml%2Fimpressum.html">W3C Validate</a> 
+      </footer>
+      
+    </div>
